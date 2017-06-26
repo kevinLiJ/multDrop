@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: '微软雅黑';
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        
+        .multDrop .multDropInp {
+            width: 100%;
+        }
+        
+        .multDrop .multDropList {
+            display: none;
+            width: 100%;
+            border-radius: 8px;
+            background: #fff;
+            border: 1px solid #f0efef;
+            overflow: auto;
+        }
+        
+        .multDrop .multDropList ul {
+            list-style: none outside none;
+            margin-bottom: 10px;
+        }
+        
+        .multDrop .multDropList ul li {
+            width: calc(50% - 10px);
+            float: left;
+            margin-top: 10px;
+            padding-left: 10px;
+            height: 14px;
+            line-height: 14px;
+        }
+        
+        .multDrop .multDropList ul li input {
+            display: inline-block;
+            width: 13px;
+        }
+        
+        .multDrop .multDropList ul li span {
+            margin-left: 10px;
+            color: #8e8e8e;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="multDrop" id="multDrop222">
+        <input type="text" readonly="readonly" class="multDropInp" name="tradingVariety" value="">
+        <input type="hidden" id="multDropSelected" value="jj|re|23">
+        <input type="hidden" id="multDropData" value="jj|re|23|we|we|gwe|ewgq">
+        <div class="multDropList row">
+            <ul>
+            </ul>
+        </div>
+    </div>
+    <div class="multDrop" id="multDrop333">
+        <input type="text" readonly="readonly" class="multDropInp" name="tradingVariety">
+        <input type="hidden" id="multDropSelected1" value="ddd|rt|rwe">
+        <input type="hidden" id="multDropData1" value='{"qq":"ee"}|{"ddd":"22"}|{"rt":"wd"}|{"rt":"wd"}|{"rwe":"few"}|{"fdse":"vae"}|{"adf":"vwe"}'>
+        <div class="multDropList row">
+            <ul>
+            </ul>
+        </div>
+    </div>
+    <script src="./jquery.js"></script>
+    <script src="./MultDropList.js"></script>
+
+</body>
+
+
+</html>
