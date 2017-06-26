@@ -78,7 +78,50 @@
         </div>
     </div>
     <script src="./jquery.js"></script>
-    <script src="./MultDropList.js"></script>
+    <script>
+        new MultDrop({
+            selectorId: 'multDrop222',
+            width: "200px",
+            height: "100px",
+            name: 'ddd',
+            data: $('#multDropData').val(),
+            selectedData: $('#multDropSelected').val(),
+            dataFormate: function(val) {
+                return val.split('|');
+            },
+            selectedDataFormate: function(val) {
+                return val.split('|');
+            },
+            afterCheck: function(MultDrop) {
+                console.log(1)
+                console.log(MultDrop.VALUE)
+            }
+        });
+
+        var aa = new MultDrop({
+            selectorId: 'multDrop333',
+            width: "200px",
+            height: "auto",
+            data: $('#multDropData1').val(),
+            selectAll: 'false',
+            selectedData: $('#multDropSelected1').val(),
+            dataFormate: function(val) {
+                var dataArr = val.split('|');
+                var data = [];
+                dataArr.forEach(function(val, idx) {
+                    data.push(JSON.parse(val));
+                });
+                console.log(data);
+                return data;
+            },
+            selectedDataFormate: function(val) {
+                return val.split('|');
+            },
+            afterCheck: function(MultDrop) {
+                console.log(MultDrop.dataType)
+            }
+        });
+    </script>
 
 </body>
 
