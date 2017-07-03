@@ -103,6 +103,7 @@ MultDrop.prototype = {
         this.option.selectedData = '';
         this.dropListUl.empty();
         this.initData();
+        this.refreshValue();
     },
     initEvent: function() {
         var _this = this;
