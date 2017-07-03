@@ -72,6 +72,7 @@
         <input type="text" readonly="readonly" class="multDropInp" name="tradingVariety">
         <input type="hidden" id="multDropSelected1" value="ddd|rt|rwe">
         <input type="hidden" id="multDropData1" value='{"qq":"ee"}|{"ddd":"22"}|{"rt":"wd"}|{"rt":"wd"}|{"rwe":"few"}|{"fdse":"vae"}|{"adf":"vwe"}'>
+        <input type="hidden" id="multDropData2" value='{"22":"dong"}|{"liyang":"liyang"}|{"rt":"wd"}|{"rt":"wd"}|{"rwe":"few"}|{"fdse":"vae"}|{"adf":"vwe"}'>
         <div class="multDropList row">
             <ul>
             </ul>
@@ -80,26 +81,28 @@
     <script src="./jquery.js"></script>
     <script src="./MultDropList.js"></script>
     <script>
-        new MultDrop({
-            selectorId: 'multDrop222',
-            width: "200px",
-            height: "100px",
-            name: 'ddd',
-            data: $('#multDropData').val(),
-            selectedData: $('#multDropSelected').val(),
-            dataFormate: function(val) {
-                return val.split('|');
-            },
-            selectedDataFormate: function(val) {
-                return val.split('|');
-            },
-            afterCheck: function(MultDrop) {
-                console.log(1)
-                console.log(MultDrop.VALUE)
-            }
-        });
+        // new MultDrop({
+        //     selectorId: 'multDrop222',
+        //     width: "200px",
+        //     height: "100px",
+        //     name: 'ddd',
+        //     data: $('#multDropData').val(),
+        //     selectedData: $('#multDropSelected').val(),
+        //     dataFormate: function(val) {
+        //         return val.split('|');
+        //     },
+        //     selectedDataFormate: function(val) {
+        //         return val.split('|');
+        //     },
+        //     afterCheck: function(MultDrop) {
+        //         console.log(1)
+        //         console.log(MultDrop.VALUE)
+        //     }
+        // });
 
-        var aa = new MultDrop({
+
+
+        var bbb = new MultDrop({
             selectorId: 'multDrop333',
             width: "200px",
             height: "auto",
@@ -122,6 +125,10 @@
                 console.log(MultDrop.dataType)
             }
         });
+
+        setTimeout(function() {
+            bbb.refreshData($('#multDropData2').val());
+        }, 2000)
     </script>
 
 </body>

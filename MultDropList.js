@@ -13,7 +13,7 @@ function MultDrop(opt) {
         data: "",
         // 默认选中的数据 
         // ['str1', 'str2']['name1', 'name2']
-        SelectedData: "",
+        SelectedData: [],
         // 是否含有全选按钮
         selectAll: 'true',
         // 用于格式化传入的data为正确格式
@@ -39,7 +39,7 @@ MultDrop.prototype = {
     constructor: MultDrop,
     init: function() {
         this.initDom();
-        this.refreshData();
+        this.initData();
         this.initEvent();
         this.refreshValue();
     },
@@ -66,7 +66,7 @@ MultDrop.prototype = {
         }
     },
     // 初始化选项以及选中项
-    refreshData: function() {
+    initData: function() {
         var _this = this;
         this.option.data = this.option.dataFormate(this.option.data);
         this.option.selectedData = this.option.selectedDataFormate(this.option.selectedData);
@@ -89,11 +89,20 @@ MultDrop.prototype = {
         }
 
         // 初始化默认选中
-        $('.multDropItem').each(function(idx, item) {
-            if (_this.option.selectedData[idx] === $(item).children('input').val()) {
-                $(item).children('input').prop('checked', true);
-            }
-        })
+        if (!_this.option.selectedData.length) {
+            $('.multDropItem').each(function(idx, item) {
+                if (_this.option.selectedData[idx] === $(item).children('input').val()) {
+                    $(item).children('input').prop('checked', true);
+                }
+            })
+        }
+    },
+    // 刷新选项、清空选中项
+    refreshData: function(data) {
+        this.option.data = data;
+        this.option.selectedData = '';
+        this.dropListUl.empty();
+        this.initData();
     },
     initEvent: function() {
         var _this = this;
