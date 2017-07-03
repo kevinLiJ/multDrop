@@ -61,8 +61,8 @@
 <body>
     <div class="multDrop" id="multDrop222">
         <input type="text" readonly="readonly" class="multDropInp" name="tradingVariety" value="">
-        <input type="hidden" id="multDropSelected" value="jj|re|23">
-        <input type="hidden" id="multDropData" value="jj|re|23|we|we|gwe|ewgq">
+        <input type="hidden" id="multDropSelected" value="ewgq|we|23">
+        <input type="hidden" id="multDropData" value="jj|re|23|we|erg|gwe|ewgq">
         <div class="multDropList row">
             <ul>
             </ul>
@@ -81,54 +81,54 @@
     <script src="./jquery.js"></script>
     <script src="./MultDropList.js"></script>
     <script>
-        // new MultDrop({
-        //     selectorId: 'multDrop222',
-        //     width: "200px",
-        //     height: "100px",
-        //     name: 'ddd',
-        //     data: $('#multDropData').val(),
-        //     selectedData: $('#multDropSelected').val(),
-        //     dataFormate: function(val) {
-        //         return val.split('|');
-        //     },
-        //     selectedDataFormate: function(val) {
-        //         return val.split('|');
-        //     },
-        //     afterCheck: function(MultDrop) {
-        //         console.log(1)
-        //         console.log(MultDrop.VALUE)
-        //     }
-        // });
-
-
-
-        var bbb = new MultDrop({
-            selectorId: 'multDrop333',
+        new MultDrop({
+            selectorId: 'multDrop222',
             width: "200px",
-            height: "auto",
-            data: $('#multDropData1').val(),
-            selectAll: 'false',
-            selectedData: $('#multDropSelected1').val(),
+            height: "100px",
+            name: 'ddd',
+            data: $('#multDropData').val(),
+            selectedData: $('#multDropSelected').val(),
             dataFormate: function(val) {
-                var dataArr = val.split('|');
-                var data = [];
-                dataArr.forEach(function(val, idx) {
-                    data.push(JSON.parse(val));
-                });
-                console.log(data);
-                return data;
+                return val.split('|');
             },
             selectedDataFormate: function(val) {
                 return val.split('|');
             },
             afterCheck: function(MultDrop) {
-                console.log(MultDrop.dataType)
+                console.log(1)
+                console.log(MultDrop.VALUE)
             }
         });
 
-        setTimeout(function() {
-            bbb.refreshData($('#multDropData2').val());
-        }, 2000)
+
+
+        // var bbb = new MultDrop({
+        //     selectorId: 'multDrop333',
+        //     width: "200px",
+        //     height: "auto",
+        //     data: $('#multDropData1').val(),
+        //     selectAll: 'false',
+        //     selectedData: $('#multDropSelected1').val(),
+        //     dataFormate: function(val) {
+        //         var dataArr = val.split('|');
+        //         var data = [];
+        //         dataArr.forEach(function(val, idx) {
+        //             data.push(JSON.parse(val));
+        //         });
+        //         console.log(data);
+        //         return data;
+        //     },
+        //     selectedDataFormate: function(val) {
+        //         return val.split('|');
+        //     },
+        //     afterCheck: function(MultDrop) {
+        //         console.log(MultDrop.dataType)
+        //     }
+        // });
+
+        // setTimeout(function() {
+        //     // bbb.refreshData($('#multDropData2').val());
+        // }, 2000)
     </script>
 
 </body>

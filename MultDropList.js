@@ -89,11 +89,9 @@ MultDrop.prototype = {
         }
 
         // 初始化默认选中
-        if (!_this.option.selectedData.length) {
-            $('.multDropItem').each(function(idx, item) {
-                if (_this.option.selectedData[idx] === $(item).children('input').val()) {
-                    $(item).children('input').prop('checked', true);
-                }
+        if (_this.option.selectedData.length) {
+            _this.option.selectedData.forEach(function(data) {
+                _this.dropListUl.find('input[value="' + data + '"]').prop('checked', true);
             })
         }
     },
